@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="RegionItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="RegionID"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RegionDescription"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Territories"
+        Association="FK_Territories_Region"
+        FromEnd="Region"
+        ToEnd="Territories" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="FK_Territories_Region">
+    <AssociationEnd
+      Name="Region"
+      Multiplicity="One"
+      EntityType="RegionItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Territories"
+      Multiplicity="Many"
+      EntityType="TerritoriesItem" />
+  </Association>
+  <EntityContainer
+    Name="NorthwindData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Region"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="RegionItem" />
+    <AssociationSet
+      Name="FK_Territories_Region"
+      Association="FK_Territories_Region">
+      <AssociationSetEnd
+        Name="Region"
+        EntitySet="Region" />
+      <AssociationSetEnd
+        Name="Territories"
+        EntitySet="Territories" />
+    </AssociationSet>
+    <QueryOperation
+      Name="Region_Single"
+      ReturnType="RegionItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="RegionID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="RegionID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Region" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="RegionID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'RegionID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Region_SingleOrDefault"
+      ReturnType="RegionItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="RegionID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="RegionID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Region" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="RegionID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'RegionID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="NorthwindDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Region">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Region" />
+        <SsdlProperty
+          Name="RegionID"
+          Nullable="False"
+          Type="int"
+          Property="RegionItem/Properties[RegionID]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="RegionDescription"
+          Nullable="False"
+          Type="nchar"
+          Property="RegionItem/Properties[RegionDescription]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Territories_Region">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Territories_Region" />
+        <SsdlAssociationSetEnd
+          End="NorthwindData/Members[FK_Territories_Region]/Members[Region]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="RegionID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="NorthwindData/Members[FK_Territories_Region]/Members[Territories]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="RegionID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

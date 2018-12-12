@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\Users\alumnoadmin\Desktop\AACD\RegistroDeViajes\RegistroDeViajes\RegistroDeViajes.DesktopClient\My Project\Client.lsml" Checksum="6C286E6205887C7EA644ED939B466E49CA0BB4B87234A5D2DFBFFCCCB76AC528" />
+    <Document FullPath="C:\Users\alumnoadmin\Desktop\AACD\RegistroDeViajes\RegistroDeViajes\RegistroDeViajes.DesktopClient\My Project\Proxies.lsml" Checksum="6A50C3FD5B310B038FE39A227A1DDEF4D797BFBB3414367357944839802ACA6B" />
+    <Document FullPath="C:\Users\alumnoadmin\Desktop\AACD\RegistroDeViajes\RegistroDeViajes\RegistroDeViajes.DesktopClient\Screens\ChoferSetListDetail.lsml" Checksum="191A54F90F3D23E6F9480238AD550E7D0FAD26C0257C0A4E8020C7DE1F35BCE9" />
+  </Documents>
+</ModelDocumentManifest>

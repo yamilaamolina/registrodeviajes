@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ApplicationDataStore">
+    <EntitySet Name="ChoferSet" EntityType="ApplicationDataStore.Chofer" store:Type="Tables" Schema="dbo" Table="ChoferSet" />
+    <EntitySet Name="ViajeSet" EntityType="ApplicationDataStore.Viaje" store:Type="Tables" Schema="dbo" Table="ViajeSet" />
+    <AssociationSet Name="Chofer_Viaje" Association="ApplicationDataStore.Chofer_Viaje">
+      <End Role="Chofer" EntitySet="ChoferSet" />
+      <End Role="Viaje" EntitySet="ViajeSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Chofer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CUIL" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Apellido" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="FechaDeNacimiento" Type="datetime" Nullable="false" />
+    <Property Name="ShippersItem_ShipperID" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Viaje">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="CiudadDestino" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CodigoPostal" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Chofer_Viaje" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Chofer_Viaje">
+    <End Role="Chofer" Type="ApplicationDataStore.Chofer" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="Viaje" Type="ApplicationDataStore.Viaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chofer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Viaje">
+        <PropertyRef Name="Chofer_Viaje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

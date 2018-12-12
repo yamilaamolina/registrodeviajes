@@ -1,0 +1,2516 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Application.Server
+</name>
+</assembly>
+<members>
+<member name="T:LightSwitchApplication.Permissions">
+ <summary>
+ Defines the names of the application permissions.
+ </summary>
+</member>
+<member name="F:LightSwitchApplication.Permissions.SecurityAdministration">
+ <summary>
+ Permite administrar la seguridad de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Permissions.AllPermissions">
+ <summary>
+ Obtiene todos los permisos definidos para la aplicación. esto incluye los permisos del sistema y definidos por el usuario.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.ApplicationData">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.ApplicationData.#ctor">
+ <summary>
+ Inicializa un nuevo objeto ApplicationData usando la cadena de conexión encontrada en la sección 'ApplicationData' del archivo de configuración de la aplicación.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.ApplicationData.#ctor(System.String)">
+ <summary>
+ Inicializar un nuevo objeto ApplicationData.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.ApplicationData.#ctor(System.Data.EntityClient.EntityConnection)">
+ <summary>
+ Inicializar un nuevo objeto ApplicationData.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ApplicationData.ChoferSet">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ApplicationData.ViajeSet">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.ApplicationData.AddToChoferSet(LightSwitchApplication.Implementation.Chofer)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet ChoferSet. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.ApplicationData.AddToViajeSet(LightSwitchApplication.Implementation.Viaje)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet ViajeSet. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.Chofer">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.Chofer.CreateChofer(System.Int32,System.String,System.String,System.String,System.DateTime,System.Int32,System.Byte[])">
+ <summary>
+ Crear un nuevo objeto Chofer.
+ </summary>
+ <param name="id">Valor inicial de la propiedad Id.</param>
+ <param name="cUIL">Valor inicial de la propiedad CUIL.</param>
+ <param name="apellido">Valor inicial de la propiedad Apellido.</param>
+ <param name="nombre">Valor inicial de la propiedad Nombre.</param>
+ <param name="fechaDeNacimiento">Valor inicial de la propiedad FechaDeNacimiento.</param>
+ <param name="shippersItem_ShipperID">Valor inicial de la propiedad ShippersItem_ShipperID.</param>
+ <param name="rowVersion">Valor inicial de la propiedad RowVersion.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Chofer.Id">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Chofer.CUIL">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Chofer.Apellido">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Chofer.Nombre">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Chofer.FechaDeNacimiento">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Chofer.ShippersItem_ShipperID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Chofer.CreatedBy">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Chofer.Created">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Chofer.ModifiedBy">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Chofer.Modified">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Chofer.RowVersion">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Chofer.ViajeCollection">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.Viaje">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.Viaje.CreateViaje(System.Int32,System.DateTime,System.String,System.Int32,System.Int32,System.Byte[])">
+ <summary>
+ Crear un nuevo objeto Viaje.
+ </summary>
+ <param name="id">Valor inicial de la propiedad Id.</param>
+ <param name="fecha">Valor inicial de la propiedad Fecha.</param>
+ <param name="ciudadDestino">Valor inicial de la propiedad CiudadDestino.</param>
+ <param name="codigoPostal">Valor inicial de la propiedad CodigoPostal.</param>
+ <param name="chofer_Viaje">Valor inicial de la propiedad Chofer_Viaje.</param>
+ <param name="rowVersion">Valor inicial de la propiedad RowVersion.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Viaje.Id">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Viaje.Fecha">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Viaje.CiudadDestino">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Viaje.CodigoPostal">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Viaje.Chofer_Viaje">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Viaje.CreatedBy">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Viaje.Created">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Viaje.ModifiedBy">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Viaje.Modified">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Viaje.RowVersion">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Viaje.Chofer">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Viaje.ChoferReference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.NorthwindData">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.#ctor">
+ <summary>
+ Inicializa un nuevo objeto NorthwindData usando la cadena de conexión encontrada en la sección 'NorthwindData' del archivo de configuración de la aplicación.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.#ctor(System.String)">
+ <summary>
+ Inicializar un nuevo objeto NorthwindData.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.#ctor(System.Data.EntityClient.EntityConnection)">
+ <summary>
+ Inicializar un nuevo objeto NorthwindData.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.NorthwindData.Categories">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.NorthwindData.CustomerCustomerDemo">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.NorthwindData.CustomerDemographics">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.NorthwindData.Customers">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.NorthwindData.Employees">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.NorthwindData.EmployeeTerritories">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.NorthwindData.Order_Details">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.NorthwindData.Orders">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.NorthwindData.Products">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.NorthwindData.Region">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.NorthwindData.Shippers">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.NorthwindData.Suppliers">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.NorthwindData.Territories">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.AddToCategories(LightSwitchApplication.Implementation.CategoriesItem)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Categories. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.AddToCustomerCustomerDemo(LightSwitchApplication.Implementation.CustomerCustomerDemoItem)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet CustomerCustomerDemo. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.AddToCustomerDemographics(LightSwitchApplication.Implementation.CustomerDemographicsItem)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet CustomerDemographics. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.AddToCustomers(LightSwitchApplication.Implementation.CustomersItem)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Customers. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.AddToEmployees(LightSwitchApplication.Implementation.EmployeesItem)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Employees. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.AddToEmployeeTerritories(LightSwitchApplication.Implementation.EmployeeTerritoriesItem)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet EmployeeTerritories. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.AddToOrder_Details(LightSwitchApplication.Implementation.Order_DetailsItem)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Order_Details. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.AddToOrders(LightSwitchApplication.Implementation.OrdersItem)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Orders. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.AddToProducts(LightSwitchApplication.Implementation.ProductsItem)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Products. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.AddToRegion(LightSwitchApplication.Implementation.RegionItem)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Region. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.AddToShippers(LightSwitchApplication.Implementation.ShippersItem)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Shippers. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.AddToSuppliers(LightSwitchApplication.Implementation.SuppliersItem)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Suppliers. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.NorthwindData.AddToTerritories(LightSwitchApplication.Implementation.TerritoriesItem)">
+ <summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Territories. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.CategoriesItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.CategoriesItem.CreateCategoriesItem(System.Int32,System.String)">
+ <summary>
+ Crear un nuevo objeto CategoriesItem.
+ </summary>
+ <param name="categoryID">Valor inicial de la propiedad CategoryID.</param>
+ <param name="categoryName">Valor inicial de la propiedad CategoryName.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CategoriesItem.CategoryID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CategoriesItem.CategoryName">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CategoriesItem.Description">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CategoriesItem.Picture">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CategoriesItem.Products">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.CustomerCustomerDemoItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.CustomerCustomerDemoItem.CreateCustomerCustomerDemoItem(System.String,System.String)">
+ <summary>
+ Crear un nuevo objeto CustomerCustomerDemoItem.
+ </summary>
+ <param name="customerID">Valor inicial de la propiedad CustomerID.</param>
+ <param name="customerTypeID">Valor inicial de la propiedad CustomerTypeID.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomerCustomerDemoItem.CustomerID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomerCustomerDemoItem.CustomerTypeID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomerCustomerDemoItem.CustomerDemographicsItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomerCustomerDemoItem.CustomerDemographicsItemReference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomerCustomerDemoItem.CustomersItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomerCustomerDemoItem.CustomersItemReference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.CustomerDemographicsItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.CustomerDemographicsItem.CreateCustomerDemographicsItem(System.String)">
+ <summary>
+ Crear un nuevo objeto CustomerDemographicsItem.
+ </summary>
+ <param name="customerTypeID">Valor inicial de la propiedad CustomerTypeID.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomerDemographicsItem.CustomerTypeID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomerDemographicsItem.CustomerDesc">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomerDemographicsItem.CustomerCustomerDemo">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.CustomersItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.CustomersItem.CreateCustomersItem(System.String,System.String)">
+ <summary>
+ Crear un nuevo objeto CustomersItem.
+ </summary>
+ <param name="customerID">Valor inicial de la propiedad CustomerID.</param>
+ <param name="companyName">Valor inicial de la propiedad CompanyName.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomersItem.CustomerID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomersItem.CompanyName">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomersItem.ContactName">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomersItem.ContactTitle">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomersItem.Address">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomersItem.City">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomersItem.Region">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomersItem.PostalCode">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomersItem.Country">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomersItem.Phone">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomersItem.Fax">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomersItem.CustomerCustomerDemo">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.CustomersItem.Orders">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.EmployeesItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.EmployeesItem.CreateEmployeesItem(System.Int32,System.String,System.String)">
+ <summary>
+ Crear un nuevo objeto EmployeesItem.
+ </summary>
+ <param name="employeeID">Valor inicial de la propiedad EmployeeID.</param>
+ <param name="lastName">Valor inicial de la propiedad LastName.</param>
+ <param name="firstName">Valor inicial de la propiedad FirstName.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.EmployeeID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.LastName">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.FirstName">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.Title">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.TitleOfCourtesy">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.BirthDate">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.HireDate">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.Address">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.City">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.Region">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.PostalCode">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.Country">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.HomePhone">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.Extension">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.Photo">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.Notes">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.PhotoPath">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.ReportsTo">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.Employees">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.EmployeesItem1">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.EmployeesItem1Reference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.EmployeeTerritories">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeesItem.Orders">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.EmployeeTerritoriesItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.EmployeeTerritoriesItem.CreateEmployeeTerritoriesItem(System.Int32,System.String)">
+ <summary>
+ Crear un nuevo objeto EmployeeTerritoriesItem.
+ </summary>
+ <param name="employeeID">Valor inicial de la propiedad EmployeeID.</param>
+ <param name="territoryID">Valor inicial de la propiedad TerritoryID.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeeTerritoriesItem.EmployeeID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeeTerritoriesItem.TerritoryID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeeTerritoriesItem.EmployeesItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeeTerritoriesItem.EmployeesItemReference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeeTerritoriesItem.TerritoriesItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.EmployeeTerritoriesItem.TerritoriesItemReference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.Order_DetailsItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.Order_DetailsItem.CreateOrder_DetailsItem(System.Int32,System.Int32,System.Decimal,System.Int16,System.Single)">
+ <summary>
+ Crear un nuevo objeto Order_DetailsItem.
+ </summary>
+ <param name="orderID">Valor inicial de la propiedad OrderID.</param>
+ <param name="productID">Valor inicial de la propiedad ProductID.</param>
+ <param name="unitPrice">Valor inicial de la propiedad UnitPrice.</param>
+ <param name="quantity">Valor inicial de la propiedad Quantity.</param>
+ <param name="discount">Valor inicial de la propiedad Discount.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Order_DetailsItem.OrderID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Order_DetailsItem.ProductID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Order_DetailsItem.UnitPrice">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Order_DetailsItem.Quantity">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Order_DetailsItem.Discount">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Order_DetailsItem.OrdersItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Order_DetailsItem.OrdersItemReference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Order_DetailsItem.ProductsItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.Order_DetailsItem.ProductsItemReference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.OrdersItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.OrdersItem.CreateOrdersItem(System.Int32)">
+ <summary>
+ Crear un nuevo objeto OrdersItem.
+ </summary>
+ <param name="orderID">Valor inicial de la propiedad OrderID.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.OrderID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.OrderDate">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.RequiredDate">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.ShippedDate">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.Freight">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.ShipName">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.ShipAddress">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.ShipCity">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.ShipRegion">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.ShipPostalCode">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.ShipCountry">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.CustomerID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.EmployeeID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.ShipVia">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.Order_Details">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.CustomersItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.CustomersItemReference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.EmployeesItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.EmployeesItemReference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.ShippersItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.OrdersItem.ShippersItemReference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.ProductsItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.ProductsItem.CreateProductsItem(System.Int32,System.String,System.Boolean)">
+ <summary>
+ Crear un nuevo objeto ProductsItem.
+ </summary>
+ <param name="productID">Valor inicial de la propiedad ProductID.</param>
+ <param name="productName">Valor inicial de la propiedad ProductName.</param>
+ <param name="discontinued">Valor inicial de la propiedad Discontinued.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.ProductID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.ProductName">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.QuantityPerUnit">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.UnitPrice">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.UnitsInStock">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.UnitsOnOrder">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.ReorderLevel">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.Discontinued">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.CategoryID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.SupplierID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.Order_Details">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.CategoriesItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.CategoriesItemReference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.SuppliersItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ProductsItem.SuppliersItemReference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.RegionItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.RegionItem.CreateRegionItem(System.Int32,System.String)">
+ <summary>
+ Crear un nuevo objeto RegionItem.
+ </summary>
+ <param name="regionID">Valor inicial de la propiedad RegionID.</param>
+ <param name="regionDescription">Valor inicial de la propiedad RegionDescription.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.RegionItem.RegionID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.RegionItem.RegionDescription">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.RegionItem.Territories">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.ShippersItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.ShippersItem.CreateShippersItem(System.Int32,System.String)">
+ <summary>
+ Crear un nuevo objeto ShippersItem.
+ </summary>
+ <param name="shipperID">Valor inicial de la propiedad ShipperID.</param>
+ <param name="companyName">Valor inicial de la propiedad CompanyName.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ShippersItem.ShipperID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ShippersItem.CompanyName">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ShippersItem.Phone">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.ShippersItem.Orders">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.SuppliersItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.SuppliersItem.CreateSuppliersItem(System.Int32,System.String)">
+ <summary>
+ Crear un nuevo objeto SuppliersItem.
+ </summary>
+ <param name="supplierID">Valor inicial de la propiedad SupplierID.</param>
+ <param name="companyName">Valor inicial de la propiedad CompanyName.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.SuppliersItem.SupplierID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.SuppliersItem.CompanyName">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.SuppliersItem.ContactName">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.SuppliersItem.ContactTitle">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.SuppliersItem.Address">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.SuppliersItem.City">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.SuppliersItem.Region">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.SuppliersItem.PostalCode">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.SuppliersItem.Country">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.SuppliersItem.Phone">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.SuppliersItem.Fax">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.SuppliersItem.HomePage">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.SuppliersItem.Products">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Implementation.TerritoriesItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Implementation.TerritoriesItem.CreateTerritoriesItem(System.String,System.String,System.Int32)">
+ <summary>
+ Crear un nuevo objeto TerritoriesItem.
+ </summary>
+ <param name="territoryID">Valor inicial de la propiedad TerritoryID.</param>
+ <param name="territoryDescription">Valor inicial de la propiedad TerritoryDescription.</param>
+ <param name="regionID">Valor inicial de la propiedad RegionID.</param>
+</member>
+<member name="P:LightSwitchApplication.Implementation.TerritoriesItem.TerritoryID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.TerritoriesItem.TerritoryDescription">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.TerritoriesItem.RegionID">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.TerritoriesItem.EmployeeTerritories">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.TerritoriesItem.RegionItem">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Implementation.TerritoriesItem.RegionItemReference">
+ <summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.ApplicationDataService">
+ <summary>
+ Proporciona miembros para consultar y actualizar datos en el origen de datos ApplicationData.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ApplicationDataService.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ApplicationDataService.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.NorthwindDataService">
+ <summary>
+ Proporciona miembros para consultar y actualizar datos en el origen de datos NorthwindData.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindDataService.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindDataService.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.DataWorkspace.#ctor">
+ <summary>
+ Inicializa una nueva instancia de un elemento DataWorkspace. En esta nueva instancia, los orígenes de datos pueden modificarse con independencia de los cambios realizados en los orígenes de datos del elemento DataWorkspace predeterminado.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.DataWorkspace.ApplicationData">
+ <summary>
+ Obtiene el origen de datos ApplicationData. Este proporciona miembros para consultar y actualizar datos en el origen de datos.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.DataWorkspace.NorthwindData">
+ <summary>
+ Obtiene el origen de datos NorthwindData. Este proporciona miembros para consultar y actualizar datos en el origen de datos.
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.ApplicationData">
+ <summary>
+ Proporciona miembros para consultar y actualizar datos en el origen de datos ApplicationData.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.ApplicationData.#ctor">
+ <summary>
+ Este constructor se usa para el marco interno de LightSwitch. Use DataWorkspace en su lugar.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ApplicationData.ChoferSet">
+ <summary>
+ Obtiene el conjunto de entidades ChoferSet. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ApplicationData.ViajeSet">
+ <summary>
+ Obtiene el conjunto de entidades ViajeSet. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.ApplicationData.ChoferSet_Single(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="Id">
+ Valor de la propiedad clave 'Id' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.ApplicationData.ChoferSet_SingleOrDefault(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="Id">
+ Valor de la propiedad clave 'Id' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.ApplicationData.ViajeSet_Single(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="Id">
+ Valor de la propiedad clave 'Id' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.ApplicationData.ViajeSet_SingleOrDefault(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="Id">
+ Valor de la propiedad clave 'Id' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="T:LightSwitchApplication.NorthwindData">
+ <summary>
+ Proporciona miembros para consultar y actualizar datos en el origen de datos NorthwindData.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.#ctor">
+ <summary>
+ Este constructor se usa para el marco interno de LightSwitch. Use DataWorkspace en su lugar.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindData.Categories">
+ <summary>
+ Obtiene el conjunto de entidades Categories. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindData.CustomerCustomerDemo">
+ <summary>
+ Obtiene el conjunto de entidades CustomerCustomerDemo. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindData.CustomerDemographics">
+ <summary>
+ Obtiene el conjunto de entidades CustomerDemographics. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindData.Customers">
+ <summary>
+ Obtiene el conjunto de entidades Customers. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindData.Employees">
+ <summary>
+ Obtiene el conjunto de entidades Employees. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindData.EmployeeTerritories">
+ <summary>
+ Obtiene el conjunto de entidades EmployeeTerritories. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindData.Order_Details">
+ <summary>
+ Obtiene el conjunto de entidades Order_Details. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindData.Orders">
+ <summary>
+ Obtiene el conjunto de entidades Orders. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindData.Products">
+ <summary>
+ Obtiene el conjunto de entidades Products. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindData.Region">
+ <summary>
+ Obtiene el conjunto de entidades Region. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindData.Shippers">
+ <summary>
+ Obtiene el conjunto de entidades Shippers. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindData.Suppliers">
+ <summary>
+ Obtiene el conjunto de entidades Suppliers. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.NorthwindData.Territories">
+ <summary>
+ Obtiene el conjunto de entidades Territories. El conjunto de entidades proporciona miembros para obtener acceso a las entidades de un tipo específico.
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Categories_Single(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="CategoryID">
+ Valor de la propiedad clave 'CategoryID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Categories_SingleOrDefault(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="CategoryID">
+ Valor de la propiedad clave 'CategoryID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.CustomerCustomerDemo_Single(System.String,System.String)">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="CustomerID">
+ Valor de la propiedad clave 'CustomerID' de la entidad que se va a recuperar.
+ </param>
+ <param name="CustomerTypeID">
+ Valor de la propiedad clave 'CustomerTypeID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.CustomerCustomerDemo_SingleOrDefault(System.String,System.String)">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="CustomerID">
+ Valor de la propiedad clave 'CustomerID' de la entidad que se va a recuperar.
+ </param>
+ <param name="CustomerTypeID">
+ Valor de la propiedad clave 'CustomerTypeID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.CustomerDemographics_Single(System.String)">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="CustomerTypeID">
+ Valor de la propiedad clave 'CustomerTypeID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.CustomerDemographics_SingleOrDefault(System.String)">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="CustomerTypeID">
+ Valor de la propiedad clave 'CustomerTypeID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Customers_Single(System.String)">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="CustomerID">
+ Valor de la propiedad clave 'CustomerID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Customers_SingleOrDefault(System.String)">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="CustomerID">
+ Valor de la propiedad clave 'CustomerID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Employees_Single(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="EmployeeID">
+ Valor de la propiedad clave 'EmployeeID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Employees_SingleOrDefault(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="EmployeeID">
+ Valor de la propiedad clave 'EmployeeID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.EmployeeTerritories_Single(System.Nullable{System.Int32},System.String)">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="EmployeeID">
+ Valor de la propiedad clave 'EmployeeID' de la entidad que se va a recuperar.
+ </param>
+ <param name="TerritoryID">
+ Valor de la propiedad clave 'TerritoryID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.EmployeeTerritories_SingleOrDefault(System.Nullable{System.Int32},System.String)">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="EmployeeID">
+ Valor de la propiedad clave 'EmployeeID' de la entidad que se va a recuperar.
+ </param>
+ <param name="TerritoryID">
+ Valor de la propiedad clave 'TerritoryID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Order_Details_Single(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="OrderID">
+ Valor de la propiedad clave 'OrderID' de la entidad que se va a recuperar.
+ </param>
+ <param name="ProductID">
+ Valor de la propiedad clave 'ProductID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Order_Details_SingleOrDefault(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="OrderID">
+ Valor de la propiedad clave 'OrderID' de la entidad que se va a recuperar.
+ </param>
+ <param name="ProductID">
+ Valor de la propiedad clave 'ProductID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Orders_Single(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="OrderID">
+ Valor de la propiedad clave 'OrderID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Orders_SingleOrDefault(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="OrderID">
+ Valor de la propiedad clave 'OrderID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Products_Single(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="ProductID">
+ Valor de la propiedad clave 'ProductID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Products_SingleOrDefault(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="ProductID">
+ Valor de la propiedad clave 'ProductID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Region_Single(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="RegionID">
+ Valor de la propiedad clave 'RegionID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Region_SingleOrDefault(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="RegionID">
+ Valor de la propiedad clave 'RegionID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Shippers_Single(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="ShipperID">
+ Valor de la propiedad clave 'ShipperID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Shippers_SingleOrDefault(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="ShipperID">
+ Valor de la propiedad clave 'ShipperID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Suppliers_Single(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="SupplierID">
+ Valor de la propiedad clave 'SupplierID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Suppliers_SingleOrDefault(System.Nullable{System.Int32})">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="SupplierID">
+ Valor de la propiedad clave 'SupplierID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Territories_Single(System.String)">
+ <summary>
+ Devuelve la entidad cuya identidad especifican el o los parámetros.
+ </summary>
+ <param name="TerritoryID">
+ Valor de la propiedad clave 'TerritoryID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="M:LightSwitchApplication.NorthwindData.Territories_SingleOrDefault(System.String)">
+ <summary>
+ Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe.
+ </summary>
+ <param name="TerritoryID">
+ Valor de la propiedad clave 'TerritoryID' de la entidad que se va a recuperar.
+ </param>
+</member>
+<member name="T:LightSwitchApplication.Chofer">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Chofer.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad Chofer.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.Id">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.CUIL">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.Apellido">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.Nombre">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.FechaDeNacimiento">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.ShippersItem_ShipperID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.CreatedBy">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.Created">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.ModifiedBy">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.Modified">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.RowVersion">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.ViajeCollection">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Chofer.ShippersItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Viaje">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Viaje.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad Viaje.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Viaje.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Viaje.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Viaje.Id">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Viaje.Fecha">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Viaje.CiudadDestino">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Viaje.CodigoPostal">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Viaje.CreatedBy">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Viaje.Created">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Viaje.ModifiedBy">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Viaje.Modified">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Viaje.RowVersion">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Viaje.Chofer">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.CategoriesItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.CategoriesItem.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad CategoriesItem.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CategoriesItem.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CategoriesItem.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CategoriesItem.CategoryID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CategoriesItem.CategoryName">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CategoriesItem.Description">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CategoriesItem.Picture">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CategoriesItem.Products">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.CustomerCustomerDemoItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.CustomerCustomerDemoItem.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad CustomerCustomerDemoItem.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomerCustomerDemoItem.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomerCustomerDemoItem.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomerCustomerDemoItem.CustomerID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomerCustomerDemoItem.CustomerTypeID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomerCustomerDemoItem.CustomerDemographicsItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomerCustomerDemoItem.CustomersItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.CustomerDemographicsItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.CustomerDemographicsItem.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad CustomerDemographicsItem.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomerDemographicsItem.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomerDemographicsItem.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomerDemographicsItem.CustomerTypeID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomerDemographicsItem.CustomerDesc">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomerDemographicsItem.CustomerCustomerDemo">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.CustomersItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.CustomersItem.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad CustomersItem.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.CustomerID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.CompanyName">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.ContactName">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.ContactTitle">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.Address">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.City">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.Region">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.PostalCode">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.Country">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.Phone">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.Fax">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.CustomerCustomerDemo">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.CustomersItem.Orders">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.EmployeesItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.EmployeesItem.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad EmployeesItem.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.EmployeeID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.LastName">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.FirstName">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.Title">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.TitleOfCourtesy">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.BirthDate">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.HireDate">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.Address">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.City">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.Region">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.PostalCode">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.Country">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.HomePhone">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.Extension">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.Photo">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.Notes">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.PhotoPath">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.Employees">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.EmployeesItem1">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.EmployeeTerritories">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeesItem.Orders">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.EmployeeTerritoriesItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.EmployeeTerritoriesItem.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad EmployeeTerritoriesItem.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeeTerritoriesItem.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeeTerritoriesItem.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeeTerritoriesItem.EmployeeID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeeTerritoriesItem.TerritoryID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeeTerritoriesItem.EmployeesItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.EmployeeTerritoriesItem.TerritoriesItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.Order_DetailsItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.Order_DetailsItem.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad Order_DetailsItem.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Order_DetailsItem.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Order_DetailsItem.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Order_DetailsItem.OrderID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Order_DetailsItem.ProductID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Order_DetailsItem.UnitPrice">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Order_DetailsItem.Quantity">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Order_DetailsItem.Discount">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Order_DetailsItem.OrdersItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.Order_DetailsItem.ProductsItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.OrdersItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.OrdersItem.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad OrdersItem.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.OrderID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.OrderDate">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.RequiredDate">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.ShippedDate">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.Freight">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.ShipName">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.ShipAddress">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.ShipCity">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.ShipRegion">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.ShipPostalCode">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.ShipCountry">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.Order_Details">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.CustomersItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.EmployeesItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.OrdersItem.ShippersItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.ProductsItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.ProductsItem.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad ProductsItem.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ProductsItem.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ProductsItem.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ProductsItem.ProductID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ProductsItem.ProductName">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ProductsItem.QuantityPerUnit">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ProductsItem.UnitPrice">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ProductsItem.UnitsInStock">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ProductsItem.UnitsOnOrder">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ProductsItem.ReorderLevel">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ProductsItem.Discontinued">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ProductsItem.Order_Details">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ProductsItem.CategoriesItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ProductsItem.SuppliersItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.RegionItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.RegionItem.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad RegionItem.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.RegionItem.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.RegionItem.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.RegionItem.RegionID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.RegionItem.RegionDescription">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.RegionItem.Territories">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.ShippersItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.ShippersItem.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad ShippersItem.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ShippersItem.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ShippersItem.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ShippersItem.ShipperID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ShippersItem.CompanyName">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ShippersItem.Phone">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ShippersItem.Orders">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.ShippersItem.ChoferCollection">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.SuppliersItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.SuppliersItem.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad SuppliersItem.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.SupplierID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.CompanyName">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.ContactName">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.ContactTitle">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.Address">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.City">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.Region">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.PostalCode">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.Country">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.Phone">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.Fax">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.HomePage">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.SuppliersItem.Products">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="T:LightSwitchApplication.TerritoriesItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="M:LightSwitchApplication.TerritoriesItem.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la entidad TerritoriesItem.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.TerritoriesItem.Application">
+ <summary>
+ Obtiene el objeto Application para esta aplicación. El objeto Application proporciona acceso a pantallas activas, métodos para abrir pantallas y acceso al usuario actual.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.TerritoriesItem.DataWorkspace">
+ <summary>
+ Obtiene el área de trabajo de datos contenedora. Dicha área proporciona acceso a todos los orígenes de datos de la aplicación.
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.TerritoriesItem.TerritoryID">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.TerritoriesItem.TerritoryDescription">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.TerritoriesItem.EmployeeTerritories">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+<member name="P:LightSwitchApplication.TerritoriesItem.RegionItem">
+ <summary>
+ No hay ninguna descripción modelada
+ </summary>
+</member>
+</members>
+</doc>

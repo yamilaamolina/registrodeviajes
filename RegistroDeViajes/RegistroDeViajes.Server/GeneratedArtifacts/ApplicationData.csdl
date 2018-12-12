@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Chofer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUIL" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Apellido" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Nombre" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="FechaDeNacimiento" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="ShippersItem_ShipperID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ViajeCollection" Relationship="LightSwitchApplication.Chofer_Viaje" ToRole="Viaje" FromRole="Chofer" />
+  </EntityType>
+  <EntityType Name="Viaje">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="CiudadDestino" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="CodigoPostal" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Chofer_Viaje" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Chofer" Relationship="LightSwitchApplication.Chofer_Viaje" ToRole="Chofer" FromRole="Viaje" />
+  </EntityType>
+  <Association Name="Chofer_Viaje">
+    <End Role="Chofer" Type="LightSwitchApplication.Chofer" Multiplicity="1" />
+    <End Role="Viaje" Type="LightSwitchApplication.Viaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chofer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Viaje">
+        <PropertyRef Name="Chofer_Viaje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="ChoferSet" EntityType="LightSwitchApplication.Chofer" />
+    <EntitySet Name="ViajeSet" EntityType="LightSwitchApplication.Viaje" />
+    <AssociationSet Name="Chofer_Viaje" Association="LightSwitchApplication.Chofer_Viaje">
+      <End Role="Chofer" EntitySet="ChoferSet" />
+      <End Role="Viaje" EntitySet="ViajeSet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

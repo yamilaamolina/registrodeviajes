@@ -1,0 +1,3253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application
+  Name="LightSwitchApplication.RegistroDeViajes.DesktopClient"
+  TargetPlatform="RichClient"
+  Version="1.0.0.0"
+  DefaultNavigationItem="!module/NavigationItems[Tasks]"
+  Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
+  Theme="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanTheme" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <Application.Attributes>
+    <ModuleNamespace
+      Namespace="LightSwitchApplication" />
+    <Partial
+      IsPrimary="True" />
+  </Application.Attributes>
+  <EntityContainerGroup
+    Name="DataWorkspace">
+    <EntityContainerGroupProperty
+      Name="SecurityData"
+      EntityContainer="Microsoft.LightSwitch.Security:SecurityData">
+      <EntityContainerGroupProperty.Attributes>
+        <Generated />
+        <DisplayName
+          Value="Security Data" />
+        <Description
+          Value="Service that provides access to security-related data." />
+      </EntityContainerGroupProperty.Attributes>
+    </EntityContainerGroupProperty>
+    <EntityContainerGroupProperty
+      Name="ApplicationData"
+      EntityContainer="ApplicationData" />
+    <EntityContainerGroupProperty
+      Name="NorthwindData"
+      EntityContainer="NorthwindData" />
+  </EntityContainerGroup>
+  <GlobalAttributeGroup
+    Name="LightSwitchServiceApplicationGroup">
+    <GlobalAttributeGroup.Attributes>
+      <AutomaticDisplayName
+        Expression="(\p{Ll})(\p{Lu})|_+"
+        Replacement="$1 $2" />
+    </GlobalAttributeGroup.Attributes>
+  </GlobalAttributeGroup>
+  <EntityContainer
+    Name="ApplicationData"
+    DataProvider="EntityFrameworkDataProvider"
+    IsIntrinsic="True">
+    <SubmitOperation
+      Name="SaveChanges" />
+    <EntitySet
+      Name="ChoferSet"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Chofer" />
+    <QueryOperation
+      Name="ChoferSet_Single"
+      ReturnType="Chofer">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ChoferSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'Id' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="ChoferSet_SingleOrDefault"
+      ReturnType="Chofer">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ChoferSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'Id' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <EntitySet
+      Name="ViajeSet"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Viaje" />
+    <QueryOperation
+      Name="ViajeSet_Single"
+      ReturnType="Viaje">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ViajeSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'Id' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="ViajeSet_SingleOrDefault"
+      ReturnType="Viaje">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ViajeSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'Id' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="Chofer_ViajeSet"
+      Association="Chofer_Viaje">
+      <AssociationSetEnd
+        Name="Chofer"
+        EntitySet="ChoferSet" />
+      <AssociationSetEnd
+        Name="Viaje"
+        EntitySet="ViajeSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType
+    Name="Chofer">
+    <EntityType.Attributes>
+      <CreatedModifiedPropertiesEnabled />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="CUIL"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Apellido"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Nombre"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FechaDeNacimiento"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="ViajeCollection"
+        Association="Chofer_Viaje"
+        FromEnd="Chofer"
+        ToEnd="Viaje" />
+      <VirtualNavigationProperty
+        Name="ShippersItem"
+        FromEnd="Chofer"
+        ToEnd="ShippersItem"
+        VirtualAssociation="Chofer_ShippersItem" />
+      <EntityProperty
+        Name="ShippersItem_ShipperID"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="Viaje">
+    <EntityType.Attributes>
+      <CreatedModifiedPropertiesEnabled />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Fecha"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CiudadDestino"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CodigoPostal"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Chofer"
+        Association="Chofer_Viaje"
+        FromEnd="Viaje"
+        ToEnd="Chofer" />
+      <EntityProperty
+        Name="CreatedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="Chofer_Viaje">
+    <AssociationEnd
+      Name="Chofer"
+      Multiplicity="One"
+      EntityType="Chofer">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Viaje"
+      Multiplicity="Many"
+      EntityType="Viaje" />
+  </Association>
+  <EntityType
+    Name="CategoriesItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="CategoryID"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="CategoryName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Description"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <NotSortable />
+          <MaxLength />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Picture"
+        PropertyType=":Binary?">
+        <EntityProperty.Attributes>
+          <NotSortable />
+          <MaxLength />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Products"
+        Association="FK_Products_Categories"
+        FromEnd="Categories"
+        ToEnd="Products" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="CustomerCustomerDemoItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="CustomerID"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="5" />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="CustomerTypeID"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="10" />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <NavigationProperty
+        Name="CustomerDemographicsItem"
+        Association="FK_CustomerCustomerDemo"
+        FromEnd="CustomerCustomerDemo"
+        ToEnd="CustomerDemographics" />
+      <NavigationProperty
+        Name="CustomersItem"
+        Association="FK_CustomerCustomerDemo_Customers"
+        FromEnd="CustomerCustomerDemo"
+        ToEnd="Customers" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="CustomerDemographicsItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="CustomerTypeID"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="10" />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="CustomerDesc"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <NotSortable />
+          <MaxLength />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="CustomerCustomerDemo"
+        Association="FK_CustomerCustomerDemo"
+        FromEnd="CustomerDemographics"
+        ToEnd="CustomerCustomerDemo" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="CustomersItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="CustomerID"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="5" />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="CompanyName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="40" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ContactName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ContactTitle"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Address"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="60" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Region"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PostalCode"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Country"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Phone"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="24" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Fax"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="24" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="CustomerCustomerDemo"
+        Association="FK_CustomerCustomerDemo_Customers"
+        FromEnd="Customers"
+        ToEnd="CustomerCustomerDemo" />
+      <NavigationProperty
+        Name="Orders"
+        Association="FK_Orders_Customers"
+        FromEnd="Customers"
+        ToEnd="Orders" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="EmployeesItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="EmployeeID"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="LastName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="20" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FirstName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Title"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TitleOfCourtesy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="25" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="BirthDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="HireDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Address"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="60" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Region"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PostalCode"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Country"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="HomePhone"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="24" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Extension"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="4" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Photo"
+        PropertyType=":Binary?">
+        <EntityProperty.Attributes>
+          <NotSortable />
+          <MaxLength />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Notes"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <NotSortable />
+          <MaxLength />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PhotoPath"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Employees"
+        Association="FK_Employees_Employees"
+        FromEnd="Employees"
+        ToEnd="Employees1" />
+      <NavigationProperty
+        Name="EmployeesItem1"
+        Association="FK_Employees_Employees"
+        FromEnd="Employees1"
+        ToEnd="Employees" />
+      <NavigationProperty
+        Name="EmployeeTerritories"
+        Association="FK_EmployeeTerritories_Employees"
+        FromEnd="Employees"
+        ToEnd="EmployeeTerritories" />
+      <NavigationProperty
+        Name="Orders"
+        Association="FK_Orders_Employees"
+        FromEnd="Employees"
+        ToEnd="Orders" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="EmployeeTerritoriesItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="EmployeeID"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="TerritoryID"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="20" />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <NavigationProperty
+        Name="EmployeesItem"
+        Association="FK_EmployeeTerritories_Employees"
+        FromEnd="EmployeeTerritories"
+        ToEnd="Employees" />
+      <NavigationProperty
+        Name="TerritoriesItem"
+        Association="FK_EmployeeTerritories_Territories"
+        FromEnd="EmployeeTerritories"
+        ToEnd="Territories" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="Order_DetailsItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="OrderID"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="ProductID"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="UnitPrice"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="19"
+            Scale="4" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Quantity"
+        PropertyType=":Int16">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Discount"
+        PropertyType=":Single">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="OrdersItem"
+        Association="FK_Order_Details_Orders"
+        FromEnd="Order_Details"
+        ToEnd="Orders" />
+      <NavigationProperty
+        Name="ProductsItem"
+        Association="FK_Order_Details_Products"
+        FromEnd="Order_Details"
+        ToEnd="Products" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="OrdersItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="OrderID"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="OrderDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RequiredDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ShippedDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Freight"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="19"
+            Scale="4" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ShipName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="40" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ShipAddress"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="60" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ShipCity"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ShipRegion"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ShipPostalCode"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ShipCountry"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Order_Details"
+        Association="FK_Order_Details_Orders"
+        FromEnd="Orders"
+        ToEnd="Order_Details" />
+      <NavigationProperty
+        Name="CustomersItem"
+        Association="FK_Orders_Customers"
+        FromEnd="Orders"
+        ToEnd="Customers" />
+      <NavigationProperty
+        Name="EmployeesItem"
+        Association="FK_Orders_Employees"
+        FromEnd="Orders"
+        ToEnd="Employees" />
+      <NavigationProperty
+        Name="ShippersItem"
+        Association="FK_Orders_Shippers"
+        FromEnd="Orders"
+        ToEnd="Shippers" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="ProductsItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="ProductID"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="ProductName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="40" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="QuantityPerUnit"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="20" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UnitPrice"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="19"
+            Scale="4" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UnitsInStock"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UnitsOnOrder"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ReorderLevel"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Discontinued"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Order_Details"
+        Association="FK_Order_Details_Products"
+        FromEnd="Products"
+        ToEnd="Order_Details" />
+      <NavigationProperty
+        Name="CategoriesItem"
+        Association="FK_Products_Categories"
+        FromEnd="Products"
+        ToEnd="Categories" />
+      <NavigationProperty
+        Name="SuppliersItem"
+        Association="FK_Products_Suppliers"
+        FromEnd="Products"
+        ToEnd="Suppliers" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="RegionItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="RegionID"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RegionDescription"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Territories"
+        Association="FK_Territories_Region"
+        FromEnd="Region"
+        ToEnd="Territories" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="ShippersItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="ShipperID"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="CompanyName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="40" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Phone"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="24" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Orders"
+        Association="FK_Orders_Shippers"
+        FromEnd="Shippers"
+        ToEnd="Orders" />
+      <VirtualNavigationProperty
+        Name="ChoferCollection"
+        FromEnd="ShippersItem"
+        ToEnd="Chofer"
+        VirtualAssociation="Chofer_ShippersItem" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="SuppliersItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="SupplierID"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="CompanyName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="40" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ContactName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ContactTitle"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Address"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="60" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Region"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PostalCode"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Country"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Phone"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="24" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Fax"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="24" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="HomePage"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <NotSortable />
+          <MaxLength />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Products"
+        Association="FK_Products_Suppliers"
+        FromEnd="Suppliers"
+        ToEnd="Products" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="TerritoriesItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="TerritoryID"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="20" />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="TerritoryDescription"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="EmployeeTerritories"
+        Association="FK_EmployeeTerritories_Territories"
+        FromEnd="Territories"
+        ToEnd="EmployeeTerritories" />
+      <NavigationProperty
+        Name="RegionItem"
+        Association="FK_Territories_Region"
+        FromEnd="Territories"
+        ToEnd="Region" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="FK_CustomerCustomerDemo">
+    <AssociationEnd
+      Name="CustomerDemographics"
+      Multiplicity="One"
+      EntityType="CustomerDemographicsItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="CustomerCustomerDemo"
+      Multiplicity="Many"
+      EntityType="CustomerCustomerDemoItem" />
+  </Association>
+  <Association
+    Name="FK_CustomerCustomerDemo_Customers">
+    <AssociationEnd
+      Name="Customers"
+      Multiplicity="One"
+      EntityType="CustomersItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="CustomerCustomerDemo"
+      Multiplicity="Many"
+      EntityType="CustomerCustomerDemoItem" />
+  </Association>
+  <Association
+    Name="FK_Employees_Employees">
+    <AssociationEnd
+      Name="Employees"
+      EntityType="EmployeesItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Employees1"
+      Multiplicity="Many"
+      EntityType="EmployeesItem" />
+  </Association>
+  <Association
+    Name="FK_EmployeeTerritories_Employees">
+    <AssociationEnd
+      Name="Employees"
+      Multiplicity="One"
+      EntityType="EmployeesItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="EmployeeTerritories"
+      Multiplicity="Many"
+      EntityType="EmployeeTerritoriesItem" />
+  </Association>
+  <Association
+    Name="FK_EmployeeTerritories_Territories">
+    <AssociationEnd
+      Name="Territories"
+      Multiplicity="One"
+      EntityType="TerritoriesItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="EmployeeTerritories"
+      Multiplicity="Many"
+      EntityType="EmployeeTerritoriesItem" />
+  </Association>
+  <Association
+    Name="FK_Order_Details_Orders">
+    <AssociationEnd
+      Name="Orders"
+      Multiplicity="One"
+      EntityType="OrdersItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Order_Details"
+      Multiplicity="Many"
+      EntityType="Order_DetailsItem" />
+  </Association>
+  <Association
+    Name="FK_Order_Details_Products">
+    <AssociationEnd
+      Name="Products"
+      Multiplicity="One"
+      EntityType="ProductsItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Order_Details"
+      Multiplicity="Many"
+      EntityType="Order_DetailsItem" />
+  </Association>
+  <Association
+    Name="FK_Orders_Customers">
+    <AssociationEnd
+      Name="Customers"
+      EntityType="CustomersItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Orders"
+      Multiplicity="Many"
+      EntityType="OrdersItem" />
+  </Association>
+  <Association
+    Name="FK_Orders_Employees">
+    <AssociationEnd
+      Name="Employees"
+      EntityType="EmployeesItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Orders"
+      Multiplicity="Many"
+      EntityType="OrdersItem" />
+  </Association>
+  <Association
+    Name="FK_Orders_Shippers">
+    <AssociationEnd
+      Name="Shippers"
+      EntityType="ShippersItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Orders"
+      Multiplicity="Many"
+      EntityType="OrdersItem" />
+  </Association>
+  <Association
+    Name="FK_Products_Categories">
+    <AssociationEnd
+      Name="Categories"
+      EntityType="CategoriesItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Products"
+      Multiplicity="Many"
+      EntityType="ProductsItem" />
+  </Association>
+  <Association
+    Name="FK_Products_Suppliers">
+    <AssociationEnd
+      Name="Suppliers"
+      EntityType="SuppliersItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Products"
+      Multiplicity="Many"
+      EntityType="ProductsItem" />
+  </Association>
+  <Association
+    Name="FK_Territories_Region">
+    <AssociationEnd
+      Name="Region"
+      Multiplicity="One"
+      EntityType="RegionItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Territories"
+      Multiplicity="Many"
+      EntityType="TerritoriesItem" />
+  </Association>
+  <EntityContainer
+    Name="NorthwindData"
+    DataProvider="EntityFrameworkDataProvider">
+    <EntitySet
+      Name="Categories"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="CategoriesItem" />
+    <EntitySet
+      Name="CustomerCustomerDemo"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="CustomerCustomerDemoItem" />
+    <EntitySet
+      Name="CustomerDemographics"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="CustomerDemographicsItem" />
+    <EntitySet
+      Name="Customers"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="CustomersItem" />
+    <EntitySet
+      Name="Employees"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="EmployeesItem" />
+    <EntitySet
+      Name="EmployeeTerritories"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="EmployeeTerritoriesItem" />
+    <EntitySet
+      Name="Order_Details"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Order_DetailsItem" />
+    <EntitySet
+      Name="Orders"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="OrdersItem" />
+    <EntitySet
+      Name="Products"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="ProductsItem" />
+    <EntitySet
+      Name="Region"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="RegionItem" />
+    <EntitySet
+      Name="Shippers"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="ShippersItem" />
+    <EntitySet
+      Name="Suppliers"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="SuppliersItem" />
+    <EntitySet
+      Name="Territories"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="TerritoriesItem" />
+    <AssociationSet
+      Name="FK_CustomerCustomerDemo"
+      Association="FK_CustomerCustomerDemo">
+      <AssociationSetEnd
+        Name="CustomerDemographics"
+        EntitySet="CustomerDemographics" />
+      <AssociationSetEnd
+        Name="CustomerCustomerDemo"
+        EntitySet="CustomerCustomerDemo" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_CustomerCustomerDemo_Customers"
+      Association="FK_CustomerCustomerDemo_Customers">
+      <AssociationSetEnd
+        Name="Customers"
+        EntitySet="Customers" />
+      <AssociationSetEnd
+        Name="CustomerCustomerDemo"
+        EntitySet="CustomerCustomerDemo" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Employees_Employees"
+      Association="FK_Employees_Employees">
+      <AssociationSetEnd
+        Name="Employees"
+        EntitySet="Employees" />
+      <AssociationSetEnd
+        Name="Employees1"
+        EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_EmployeeTerritories_Employees"
+      Association="FK_EmployeeTerritories_Employees">
+      <AssociationSetEnd
+        Name="Employees"
+        EntitySet="Employees" />
+      <AssociationSetEnd
+        Name="EmployeeTerritories"
+        EntitySet="EmployeeTerritories" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_EmployeeTerritories_Territories"
+      Association="FK_EmployeeTerritories_Territories">
+      <AssociationSetEnd
+        Name="Territories"
+        EntitySet="Territories" />
+      <AssociationSetEnd
+        Name="EmployeeTerritories"
+        EntitySet="EmployeeTerritories" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Order_Details_Orders"
+      Association="FK_Order_Details_Orders">
+      <AssociationSetEnd
+        Name="Orders"
+        EntitySet="Orders" />
+      <AssociationSetEnd
+        Name="Order_Details"
+        EntitySet="Order_Details" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Order_Details_Products"
+      Association="FK_Order_Details_Products">
+      <AssociationSetEnd
+        Name="Products"
+        EntitySet="Products" />
+      <AssociationSetEnd
+        Name="Order_Details"
+        EntitySet="Order_Details" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Orders_Customers"
+      Association="FK_Orders_Customers">
+      <AssociationSetEnd
+        Name="Customers"
+        EntitySet="Customers" />
+      <AssociationSetEnd
+        Name="Orders"
+        EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Orders_Employees"
+      Association="FK_Orders_Employees">
+      <AssociationSetEnd
+        Name="Employees"
+        EntitySet="Employees" />
+      <AssociationSetEnd
+        Name="Orders"
+        EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Orders_Shippers"
+      Association="FK_Orders_Shippers">
+      <AssociationSetEnd
+        Name="Shippers"
+        EntitySet="Shippers" />
+      <AssociationSetEnd
+        Name="Orders"
+        EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Products_Categories"
+      Association="FK_Products_Categories">
+      <AssociationSetEnd
+        Name="Categories"
+        EntitySet="Categories" />
+      <AssociationSetEnd
+        Name="Products"
+        EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Products_Suppliers"
+      Association="FK_Products_Suppliers">
+      <AssociationSetEnd
+        Name="Suppliers"
+        EntitySet="Suppliers" />
+      <AssociationSetEnd
+        Name="Products"
+        EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Territories_Region"
+      Association="FK_Territories_Region">
+      <AssociationSetEnd
+        Name="Region"
+        EntitySet="Region" />
+      <AssociationSetEnd
+        Name="Territories"
+        EntitySet="Territories" />
+    </AssociationSet>
+    <QueryOperation
+      Name="Categories_Single"
+      ReturnType="CategoriesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Categories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="CategoryID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'CategoryID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Categories_SingleOrDefault"
+      ReturnType="CategoriesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Categories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="CategoryID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'CategoryID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="CustomerCustomerDemo_Single"
+      ReturnType="CustomerCustomerDemoItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CustomerCustomerDemo" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="CustomerID"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'CustomerID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="CustomerTypeID"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'CustomerTypeID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="CustomerCustomerDemo_SingleOrDefault"
+      ReturnType="CustomerCustomerDemoItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CustomerCustomerDemo" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="CustomerID"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'CustomerID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="CustomerTypeID"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'CustomerTypeID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="CustomerDemographics_Single"
+      ReturnType="CustomerDemographicsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CustomerDemographics" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="CustomerTypeID"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'CustomerTypeID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="CustomerDemographics_SingleOrDefault"
+      ReturnType="CustomerDemographicsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CustomerDemographics" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="CustomerTypeID"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'CustomerTypeID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Customers_Single"
+      ReturnType="CustomersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Customers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="CustomerID"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'CustomerID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Customers_SingleOrDefault"
+      ReturnType="CustomersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Customers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="CustomerID"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'CustomerID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Employees_Single"
+      ReturnType="EmployeesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Employees" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="EmployeeID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'EmployeeID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Employees_SingleOrDefault"
+      ReturnType="EmployeesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Employees" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="EmployeeID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'EmployeeID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="EmployeeTerritories_Single"
+      ReturnType="EmployeeTerritoriesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EmployeeTerritories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="EmployeeID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'EmployeeID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="TerritoryID"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'TerritoryID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="EmployeeTerritories_SingleOrDefault"
+      ReturnType="EmployeeTerritoriesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EmployeeTerritories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="EmployeeID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'EmployeeID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="TerritoryID"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'TerritoryID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Order_Details_Single"
+      ReturnType="Order_DetailsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Order_Details" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="OrderID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'OrderID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="ProductID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'ProductID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Order_Details_SingleOrDefault"
+      ReturnType="Order_DetailsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Order_Details" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="OrderID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'OrderID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="ProductID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'ProductID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Orders_Single"
+      ReturnType="OrdersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Orders" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="OrderID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'OrderID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Orders_SingleOrDefault"
+      ReturnType="OrdersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Orders" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="OrderID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'OrderID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Products_Single"
+      ReturnType="ProductsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Products" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ProductID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'ProductID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Products_SingleOrDefault"
+      ReturnType="ProductsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Products" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ProductID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'ProductID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Region_Single"
+      ReturnType="RegionItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Region" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="RegionID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'RegionID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Region_SingleOrDefault"
+      ReturnType="RegionItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Region" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="RegionID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'RegionID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Shippers_Single"
+      ReturnType="ShippersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Shippers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ShipperID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'ShipperID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Shippers_SingleOrDefault"
+      ReturnType="ShippersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Shippers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ShipperID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'ShipperID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Suppliers_Single"
+      ReturnType="SuppliersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Suppliers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="SupplierID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'SupplierID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Suppliers_SingleOrDefault"
+      ReturnType="SuppliersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Suppliers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="SupplierID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'SupplierID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Territories_Single"
+      ReturnType="TerritoriesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad especifican el o los parámetros." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Territories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="TerritoryID"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'TerritoryID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Territories_SingleOrDefault"
+      ReturnType="TerritoriesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Devuelve la entidad cuya identidad se especifica en el o los parámetros, o NULL si la entidad no existe." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Territories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="TerritoryID"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Valor de la propiedad clave 'TerritoryID' de la entidad que se va a recuperar." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <SubmitOperation
+      Name="SaveChanges" />
+  </EntityContainer>
+  <VirtualAssociation
+    Name="Chofer_ShippersItem">
+    <VirtualAssociationEnd
+      Name="Chofer"
+      Multiplicity="Many"
+      EntityType="Chofer" />
+    <VirtualAssociationEnd
+      Name="ShippersItem"
+      Multiplicity="One"
+      EntityType="ShippersItem" />
+  </VirtualAssociation>
+  <VirtualAssociationSet
+    Name="Chofer_ShippersItem_Set"
+    VirtualAssociation="Chofer_ShippersItem">
+    <VirtualAssociationSetEnd
+      Name="Chofer"
+      EntityContainer="ApplicationData"
+      EntitySet="ChoferSet">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="ShippersItem_ShipperID" />
+    </VirtualAssociationSetEnd>
+    <VirtualAssociationSetEnd
+      Name="ShippersItem"
+      EntityContainer="NorthwindData"
+      EntitySet="Shippers">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="ShipperID" />
+    </VirtualAssociationSetEnd>
+  </VirtualAssociationSet>
+  <Screen
+    Name="ChoferSetListDetail">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="ApplicationData" />
+    </Screen.Attributes>
+    <Screen.RootContentItem>
+      <ContentItem
+        Name="RootContentItem"
+        Kind="Screen"
+        View="Microsoft.LightSwitch.RichClient:Screen">
+        <ContentItem
+          Name="ScreenLayout"
+          Kind="Group"
+          View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+          <ContentItem
+            Name="ListColumn"
+            Kind="Group">
+            <ContentItem
+              Name="ChoferList"
+              Kind="Collection"
+              DataType="CollectionView$Chofer"
+              View="Microsoft.LightSwitch.RichClient:List">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ChoferSetListDetail/Properties[ChoferSet]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="RowTemplate"
+                Kind="Details"
+                DataType="Chofer">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="CUIL"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Chofer/Properties[CUIL]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Apellido"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Chofer/Properties[Apellido]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Nombre"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Chofer/Properties[Nombre]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="FechaDeNacimiento"
+                  Kind="Value"
+                  DataType=":Date">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Chofer/Properties[FechaDeNacimiento]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="ShippersItem"
+                  Kind="Details"
+                  DataType="ShippersItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Chofer/Properties[ShippersItem]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate1"
+                    Kind="Details"
+                    DataType="ShippersItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="CreatedBy"
+                  Kind="Value"
+                  DataType=":Person?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Chofer/Properties[CreatedBy]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Created"
+                  Kind="Value"
+                  DataType=":DateTimeOffset?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Chofer/Properties[Created]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="ModifiedBy"
+                  Kind="Value"
+                  DataType=":Person?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Chofer/Properties[ModifiedBy]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Modified"
+                  Kind="Value"
+                  DataType=":DateTimeOffset?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Chofer/Properties[Modified]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Name="ChoferSet_AddAndEditNew"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChoferSetListDetail/Properties[ChoferSet]" />
+                        <CallExpression
+                          Target="AddAndEditNew" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="ChoferSet_EditSelected"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChoferSetListDetail/Properties[ChoferSet]" />
+                        <CallExpression
+                          Target="EditSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="ChoferSet_DeleteSelected"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChoferSetListDetail/Properties[ChoferSet]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Collapsed"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Stretch"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="2"
+                      ResultType=":Double" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+          <ContentItem
+            Name="DetailsColumn"
+            Kind="Group">
+            <ContentItem
+              Name="ChoferDetails"
+              Kind="Details"
+              DataType="Chofer">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Chofer Details" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ChoferSetListDetail/Properties[ChoferSet]" />
+                    <MemberExpression
+                      Member="SelectedItem" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="CUIL1"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Chofer/Properties[CUIL]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Apellido1"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Chofer/Properties[Apellido]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Nombre1"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Chofer/Properties[Nombre]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="FechaDeNacimiento1"
+                Kind="Value"
+                DataType=":Date">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Chofer/Properties[FechaDeNacimiento]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="ShippersItem1"
+                Kind="Details"
+                DataType="ShippersItem">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Chofer/Properties[ShippersItem]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="RowTemplate2"
+                  Kind="Details"
+                  DataType="ShippersItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem
+                Name="CreatedBy1"
+                Kind="Value"
+                DataType=":Person?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Chofer/Properties[CreatedBy]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Created1"
+                Kind="Value"
+                DataType=":DateTimeOffset?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Chofer/Properties[Created]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="ModifiedBy1"
+                Kind="Value"
+                DataType=":Person?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Chofer/Properties[ModifiedBy]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Modified1"
+                Kind="Value"
+                DataType=":DateTimeOffset?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Chofer/Properties[Modified]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Top"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
+              Name="ViajeCollection"
+              Kind="Collection"
+              DataType="CollectionView$Viaje"
+              View="Microsoft.LightSwitch.RichClient:DataGrid">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ChoferSetListDetail/Properties[ViajeCollection]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="RowTemplate3"
+                Kind="Details"
+                DataType="Viaje">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="Fecha"
+                  Kind="Value"
+                  DataType=":Date">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Viaje/Properties[Fecha]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="CiudadDestino"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Viaje/Properties[CiudadDestino]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="CodigoPostal"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Viaje/Properties[CodigoPostal]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="CreatedBy2"
+                  Kind="Value"
+                  DataType=":Person?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Viaje/Properties[CreatedBy]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Created2"
+                  Kind="Value"
+                  DataType=":DateTimeOffset?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Viaje/Properties[Created]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="ModifiedBy2"
+                  Kind="Value"
+                  DataType=":Person?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Viaje/Properties[ModifiedBy]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Modified2"
+                  Kind="Value"
+                  DataType=":DateTimeOffset?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Viaje/Properties[Modified]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Name="ViajeCollection_AddAndEditNew"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChoferSetListDetail/Properties[ViajeCollection]" />
+                        <CallExpression
+                          Target="AddAndEditNew" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="ViajeCollection_EditSelected"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChoferSetListDetail/Properties[ViajeCollection]" />
+                        <CallExpression
+                          Target="EditSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="ViajeCollection_DeleteSelected"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChoferSetListDetail/Properties[ViajeCollection]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Stretch"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="True"
+                      ResultType=":Boolean" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="3"
+                      ResultType=":Double" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+        </ContentItem>
+        <ContentItem.CommandItems>
+          <ContentItem
+            Name="Save"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="ChoferSetListDetail/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Name="Refresh"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="ChoferSetListDetail/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+      </ContentItem>
+    </Screen.RootContentItem>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="Save">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Refresh">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Close">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenCollectionProperty
+        Name="ChoferSet"
+        PageSize="45"
+        PropertyType="CollectionView$Chofer">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="ChoferSetQuery"
+            ReturnType="Chofer*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="ApplicationData/Members[ChoferSet]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ChoferSetListDetail/Properties[ChoferSet]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="ViajeCollection"
+        PageSize="15"
+        PropertyType="CollectionView$Viaje">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="ViajeCollectionQuery"
+            ReturnType="Viaje*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ChoferSetListDetail/Properties[ChoferSet]" />
+                  <MemberExpression
+                    Member="SelectedItem" />
+                  <MemberExpression
+                    Member="ViajeCollection" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ChoferSetListDetail/Properties[ViajeCollection]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+    </Screen.Properties>
+  </Screen>
+  <Application.Commands>
+    <ApplicationCommand
+      Name="ScreenCommandShowChoferSetListDetail"
+      Target="!module/Methods[ShowChoferSetListDetail]" />
+  </Application.Commands>
+  <Application.Methods>
+    <ApplicationMethod
+      Name="ShowChoferSetListDetail">
+      <ApplicationMethod.Attributes>
+        <ShowScreenMethod
+          TargetScreen="ChoferSetListDetail" />
+      </ApplicationMethod.Attributes>
+    </ApplicationMethod>
+  </Application.Methods>
+  <Application.NavigationItems>
+    <ApplicationNavigationGroup
+      Name="Tasks">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="Tasks" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="ChoferSetListDetail"
+        Command="!module/Commands[ScreenCommandShowChoferSetListDetail]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
+      Name="Administration">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="Administration" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="RolesScreen"
+        Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowRolesScreen]" />
+      <ApplicationNavigationLink
+        Name="UsersScreen"
+        Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
+    </ApplicationNavigationGroup>
+  </Application.NavigationItems>
+</Application>

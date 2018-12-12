@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="CategoriesItem">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="Edm.String" Nullable="false" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Picture" Type="Edm.Binary" MaxLength="Max" />
+    <NavigationProperty Name="Products" Relationship="LightSwitchApplication.FK_Products_Categories" ToRole="Products" FromRole="Categories" />
+  </EntityType>
+  <EntityType Name="CustomerCustomerDemoItem">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="CustomerTypeID" />
+    </Key>
+    <Property Name="CustomerID" Type="Edm.String" Nullable="false" MaxLength="5" FixedLength="true" />
+    <Property Name="CustomerTypeID" Type="Edm.String" Nullable="false" MaxLength="10" FixedLength="true" />
+    <NavigationProperty Name="CustomerDemographicsItem" Relationship="LightSwitchApplication.FK_CustomerCustomerDemo" ToRole="CustomerDemographics" FromRole="CustomerCustomerDemo" />
+    <NavigationProperty Name="CustomersItem" Relationship="LightSwitchApplication.FK_CustomerCustomerDemo_Customers" ToRole="Customers" FromRole="CustomerCustomerDemo" />
+  </EntityType>
+  <EntityType Name="CustomerDemographicsItem">
+    <Key>
+      <PropertyRef Name="CustomerTypeID" />
+    </Key>
+    <Property Name="CustomerTypeID" Type="Edm.String" Nullable="false" MaxLength="10" FixedLength="true" />
+    <Property Name="CustomerDesc" Type="Edm.String" MaxLength="Max" />
+    <NavigationProperty Name="CustomerCustomerDemo" Relationship="LightSwitchApplication.FK_CustomerCustomerDemo" ToRole="CustomerCustomerDemo" FromRole="CustomerDemographics" />
+  </EntityType>
+  <EntityType Name="CustomersItem">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Edm.String" Nullable="false" MaxLength="5" FixedLength="true" />
+    <Property Name="CompanyName" Type="Edm.String" Nullable="false" MaxLength="40" ConcurrencyMode="Fixed" />
+    <Property Name="ContactName" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="ContactTitle" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="Address" Type="Edm.String" MaxLength="60" ConcurrencyMode="Fixed" />
+    <Property Name="City" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="Region" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="PostalCode" Type="Edm.String" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="Country" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="Phone" Type="Edm.String" MaxLength="24" ConcurrencyMode="Fixed" />
+    <Property Name="Fax" Type="Edm.String" MaxLength="24" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="CustomerCustomerDemo" Relationship="LightSwitchApplication.FK_CustomerCustomerDemo_Customers" ToRole="CustomerCustomerDemo" FromRole="Customers" />
+    <NavigationProperty Name="Orders" Relationship="LightSwitchApplication.FK_Orders_Customers" ToRole="Orders" FromRole="Customers" />
+  </EntityType>
+  <EntityType Name="EmployeesItem">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="20" ConcurrencyMode="Fixed" />
+    <Property Name="FirstName" Type="Edm.String" Nullable="false" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="Title" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="TitleOfCourtesy" Type="Edm.String" MaxLength="25" ConcurrencyMode="Fixed" />
+    <Property Name="BirthDate" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="HireDate" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Address" Type="Edm.String" MaxLength="60" ConcurrencyMode="Fixed" />
+    <Property Name="City" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="Region" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="PostalCode" Type="Edm.String" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="Country" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="HomePhone" Type="Edm.String" MaxLength="24" ConcurrencyMode="Fixed" />
+    <Property Name="Extension" Type="Edm.String" MaxLength="4" ConcurrencyMode="Fixed" />
+    <Property Name="Photo" Type="Edm.Binary" MaxLength="Max" />
+    <Property Name="Notes" Type="Edm.String" MaxLength="Max" />
+    <Property Name="PhotoPath" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="ReportsTo" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Employees" Relationship="LightSwitchApplication.FK_Employees_Employees" ToRole="Employees1" FromRole="Employees" />
+    <NavigationProperty Name="EmployeesItem1" Relationship="LightSwitchApplication.FK_Employees_Employees" ToRole="Employees" FromRole="Employees1" />
+    <NavigationProperty Name="EmployeeTerritories" Relationship="LightSwitchApplication.FK_EmployeeTerritories_Employees" ToRole="EmployeeTerritories" FromRole="Employees" />
+    <NavigationProperty Name="Orders" Relationship="LightSwitchApplication.FK_Orders_Employees" ToRole="Orders" FromRole="Employees" />
+  </EntityType>
+  <EntityType Name="EmployeeTerritoriesItem">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="TerritoryID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="TerritoryID" Type="Edm.String" Nullable="false" MaxLength="20" />
+    <NavigationProperty Name="EmployeesItem" Relationship="LightSwitchApplication.FK_EmployeeTerritories_Employees" ToRole="Employees" FromRole="EmployeeTerritories" />
+    <NavigationProperty Name="TerritoriesItem" Relationship="LightSwitchApplication.FK_EmployeeTerritories_Territories" ToRole="Territories" FromRole="EmployeeTerritories" />
+  </EntityType>
+  <EntityType Name="Order_DetailsItem">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="OrderID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="UnitPrice" Type="Edm.Decimal" Nullable="false" Precision="19" Scale="4" ConcurrencyMode="Fixed" />
+    <Property Name="Quantity" Type="Edm.Int16" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Discount" Type="Edm.Single" Nullable="false" />
+    <NavigationProperty Name="OrdersItem" Relationship="LightSwitchApplication.FK_Order_Details_Orders" ToRole="Orders" FromRole="Order_Details" />
+    <NavigationProperty Name="ProductsItem" Relationship="LightSwitchApplication.FK_Order_Details_Products" ToRole="Products" FromRole="Order_Details" />
+  </EntityType>
+  <EntityType Name="OrdersItem">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDate" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="RequiredDate" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="ShippedDate" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Freight" Type="Edm.Decimal" Precision="19" Scale="4" ConcurrencyMode="Fixed" />
+    <Property Name="ShipName" Type="Edm.String" MaxLength="40" ConcurrencyMode="Fixed" />
+    <Property Name="ShipAddress" Type="Edm.String" MaxLength="60" ConcurrencyMode="Fixed" />
+    <Property Name="ShipCity" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="ShipRegion" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="ShipPostalCode" Type="Edm.String" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="ShipCountry" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="CustomerID" Type="Edm.String" MaxLength="5" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="EmployeeID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ShipVia" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Order_Details" Relationship="LightSwitchApplication.FK_Order_Details_Orders" ToRole="Order_Details" FromRole="Orders" />
+    <NavigationProperty Name="CustomersItem" Relationship="LightSwitchApplication.FK_Orders_Customers" ToRole="Customers" FromRole="Orders" />
+    <NavigationProperty Name="EmployeesItem" Relationship="LightSwitchApplication.FK_Orders_Employees" ToRole="Employees" FromRole="Orders" />
+    <NavigationProperty Name="ShippersItem" Relationship="LightSwitchApplication.FK_Orders_Shippers" ToRole="Shippers" FromRole="Orders" />
+  </EntityType>
+  <EntityType Name="ProductsItem">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="Edm.String" Nullable="false" MaxLength="40" ConcurrencyMode="Fixed" />
+    <Property Name="QuantityPerUnit" Type="Edm.String" MaxLength="20" ConcurrencyMode="Fixed" />
+    <Property Name="UnitPrice" Type="Edm.Decimal" Precision="19" Scale="4" ConcurrencyMode="Fixed" />
+    <Property Name="UnitsInStock" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="UnitsOnOrder" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="ReorderLevel" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="Discontinued" Type="Edm.Boolean" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="CategoryID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="SupplierID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Order_Details" Relationship="LightSwitchApplication.FK_Order_Details_Products" ToRole="Order_Details" FromRole="Products" />
+    <NavigationProperty Name="CategoriesItem" Relationship="LightSwitchApplication.FK_Products_Categories" ToRole="Categories" FromRole="Products" />
+    <NavigationProperty Name="SuppliersItem" Relationship="LightSwitchApplication.FK_Products_Suppliers" ToRole="Suppliers" FromRole="Products" />
+  </EntityType>
+  <EntityType Name="RegionItem">
+    <Key>
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="RegionID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="RegionDescription" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="true" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Territories" Relationship="LightSwitchApplication.FK_Territories_Region" ToRole="Territories" FromRole="Region" />
+  </EntityType>
+  <EntityType Name="ShippersItem">
+    <Key>
+      <PropertyRef Name="ShipperID" />
+    </Key>
+    <Property Name="ShipperID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="Edm.String" Nullable="false" MaxLength="40" ConcurrencyMode="Fixed" />
+    <Property Name="Phone" Type="Edm.String" MaxLength="24" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Orders" Relationship="LightSwitchApplication.FK_Orders_Shippers" ToRole="Orders" FromRole="Shippers" />
+  </EntityType>
+  <EntityType Name="SuppliersItem">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="Edm.String" Nullable="false" MaxLength="40" ConcurrencyMode="Fixed" />
+    <Property Name="ContactName" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="ContactTitle" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="Address" Type="Edm.String" MaxLength="60" ConcurrencyMode="Fixed" />
+    <Property Name="City" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="Region" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="PostalCode" Type="Edm.String" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="Country" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="Phone" Type="Edm.String" MaxLength="24" ConcurrencyMode="Fixed" />
+    <Property Name="Fax" Type="Edm.String" MaxLength="24" ConcurrencyMode="Fixed" />
+    <Property Name="HomePage" Type="Edm.String" MaxLength="Max" />
+    <NavigationProperty Name="Products" Relationship="LightSwitchApplication.FK_Products_Suppliers" ToRole="Products" FromRole="Suppliers" />
+  </EntityType>
+  <EntityType Name="TerritoriesItem">
+    <Key>
+      <PropertyRef Name="TerritoryID" />
+    </Key>
+    <Property Name="TerritoryID" Type="Edm.String" Nullable="false" MaxLength="20" />
+    <Property Name="TerritoryDescription" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="RegionID" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="EmployeeTerritories" Relationship="LightSwitchApplication.FK_EmployeeTerritories_Territories" ToRole="EmployeeTerritories" FromRole="Territories" />
+    <NavigationProperty Name="RegionItem" Relationship="LightSwitchApplication.FK_Territories_Region" ToRole="Region" FromRole="Territories" />
+  </EntityType>
+  <Association Name="FK_CustomerCustomerDemo">
+    <End Role="CustomerDemographics" Type="LightSwitchApplication.CustomerDemographicsItem" Multiplicity="1" />
+    <End Role="CustomerCustomerDemo" Type="LightSwitchApplication.CustomerCustomerDemoItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerDemographics">
+        <PropertyRef Name="CustomerTypeID" />
+      </Principal>
+      <Dependent Role="CustomerCustomerDemo">
+        <PropertyRef Name="CustomerTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerCustomerDemo_Customers">
+    <End Role="Customers" Type="LightSwitchApplication.CustomersItem" Multiplicity="1" />
+    <End Role="CustomerCustomerDemo" Type="LightSwitchApplication.CustomerCustomerDemoItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CustomerCustomerDemo">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Employees">
+    <End Role="Employees" Type="LightSwitchApplication.EmployeesItem" Multiplicity="0..1" />
+    <End Role="Employees1" Type="LightSwitchApplication.EmployeesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Employees1">
+        <PropertyRef Name="ReportsTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeTerritories_Employees">
+    <End Role="Employees" Type="LightSwitchApplication.EmployeesItem" Multiplicity="1" />
+    <End Role="EmployeeTerritories" Type="LightSwitchApplication.EmployeeTerritoriesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="EmployeeTerritories">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeTerritories_Territories">
+    <End Role="Territories" Type="LightSwitchApplication.TerritoriesItem" Multiplicity="1" />
+    <End Role="EmployeeTerritories" Type="LightSwitchApplication.EmployeeTerritoriesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Territories">
+        <PropertyRef Name="TerritoryID" />
+      </Principal>
+      <Dependent Role="EmployeeTerritories">
+        <PropertyRef Name="TerritoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Details_Orders">
+    <End Role="Orders" Type="LightSwitchApplication.OrdersItem" Multiplicity="1" />
+    <End Role="Order_Details" Type="LightSwitchApplication.Order_DetailsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Details_Products">
+    <End Role="Products" Type="LightSwitchApplication.ProductsItem" Multiplicity="1" />
+    <End Role="Order_Details" Type="LightSwitchApplication.Order_DetailsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Customers">
+    <End Role="Customers" Type="LightSwitchApplication.CustomersItem" Multiplicity="0..1" />
+    <End Role="Orders" Type="LightSwitchApplication.OrdersItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Employees">
+    <End Role="Employees" Type="LightSwitchApplication.EmployeesItem" Multiplicity="0..1" />
+    <End Role="Orders" Type="LightSwitchApplication.OrdersItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Shippers">
+    <End Role="Shippers" Type="LightSwitchApplication.ShippersItem" Multiplicity="0..1" />
+    <End Role="Orders" Type="LightSwitchApplication.OrdersItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shippers">
+        <PropertyRef Name="ShipperID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="ShipVia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Categories">
+    <End Role="Categories" Type="LightSwitchApplication.CategoriesItem" Multiplicity="0..1" />
+    <End Role="Products" Type="LightSwitchApplication.ProductsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Suppliers">
+    <End Role="Suppliers" Type="LightSwitchApplication.SuppliersItem" Multiplicity="0..1" />
+    <End Role="Products" Type="LightSwitchApplication.ProductsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Territories_Region">
+    <End Role="Region" Type="LightSwitchApplication.RegionItem" Multiplicity="1" />
+    <End Role="Territories" Type="LightSwitchApplication.TerritoriesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="RegionID" />
+      </Principal>
+      <Dependent Role="Territories">
+        <PropertyRef Name="RegionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NorthwindData" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="Categories" EntityType="LightSwitchApplication.CategoriesItem" />
+    <EntitySet Name="CustomerCustomerDemo" EntityType="LightSwitchApplication.CustomerCustomerDemoItem" />
+    <EntitySet Name="CustomerDemographics" EntityType="LightSwitchApplication.CustomerDemographicsItem" />
+    <EntitySet Name="Customers" EntityType="LightSwitchApplication.CustomersItem" />
+    <EntitySet Name="Employees" EntityType="LightSwitchApplication.EmployeesItem" />
+    <EntitySet Name="EmployeeTerritories" EntityType="LightSwitchApplication.EmployeeTerritoriesItem" />
+    <EntitySet Name="Order_Details" EntityType="LightSwitchApplication.Order_DetailsItem" />
+    <EntitySet Name="Orders" EntityType="LightSwitchApplication.OrdersItem" />
+    <EntitySet Name="Products" EntityType="LightSwitchApplication.ProductsItem" />
+    <EntitySet Name="Region" EntityType="LightSwitchApplication.RegionItem" />
+    <EntitySet Name="Shippers" EntityType="LightSwitchApplication.ShippersItem" />
+    <EntitySet Name="Suppliers" EntityType="LightSwitchApplication.SuppliersItem" />
+    <EntitySet Name="Territories" EntityType="LightSwitchApplication.TerritoriesItem" />
+    <AssociationSet Name="FK_CustomerCustomerDemo" Association="LightSwitchApplication.FK_CustomerCustomerDemo">
+      <End Role="CustomerDemographics" EntitySet="CustomerDemographics" />
+      <End Role="CustomerCustomerDemo" EntitySet="CustomerCustomerDemo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerCustomerDemo_Customers" Association="LightSwitchApplication.FK_CustomerCustomerDemo_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CustomerCustomerDemo" EntitySet="CustomerCustomerDemo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Employees" Association="LightSwitchApplication.FK_Employees_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Employees1" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeTerritories_Employees" Association="LightSwitchApplication.FK_EmployeeTerritories_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeeTerritories" EntitySet="EmployeeTerritories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeTerritories_Territories" Association="LightSwitchApplication.FK_EmployeeTerritories_Territories">
+      <End Role="Territories" EntitySet="Territories" />
+      <End Role="EmployeeTerritories" EntitySet="EmployeeTerritories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Details_Orders" Association="LightSwitchApplication.FK_Order_Details_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Details_Products" Association="LightSwitchApplication.FK_Order_Details_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Customers" Association="LightSwitchApplication.FK_Orders_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Employees" Association="LightSwitchApplication.FK_Orders_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Shippers" Association="LightSwitchApplication.FK_Orders_Shippers">
+      <End Role="Shippers" EntitySet="Shippers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Categories" Association="LightSwitchApplication.FK_Products_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Suppliers" Association="LightSwitchApplication.FK_Products_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Territories_Region" Association="LightSwitchApplication.FK_Territories_Region">
+      <End Role="Region" EntitySet="Region" />
+      <End Role="Territories" EntitySet="Territories" />
+    </AssociationSet>
+    <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
+      <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,18 @@
+RegistroDeViajes.Server.DataSources.ApplicationData.ChoferSet.lsml
+RegistroDeViajes.Server.DataSources.ApplicationData.ViajeSet.lsml
+RegistroDeViajes.Server.DataSources.NorthwindData.Categories.lsml
+RegistroDeViajes.Server.DataSources.NorthwindData.CustomerCustomerDemo.lsml
+RegistroDeViajes.Server.DataSources.NorthwindData.CustomerDemographics.lsml
+RegistroDeViajes.Server.DataSources.NorthwindData.Customers.lsml
+RegistroDeViajes.Server.DataSources.NorthwindData.Employees.lsml
+RegistroDeViajes.Server.DataSources.NorthwindData.EmployeeTerritories.lsml
+RegistroDeViajes.Server.DataSources.NorthwindData.Order_Details.lsml
+RegistroDeViajes.Server.DataSources.NorthwindData.Orders.lsml
+RegistroDeViajes.Server.DataSources.NorthwindData.Products.lsml
+RegistroDeViajes.Server.DataSources.NorthwindData.Region.lsml
+RegistroDeViajes.Server.DataSources.NorthwindData.Shippers.lsml
+RegistroDeViajes.Server.DataSources.NorthwindData.Suppliers.lsml
+RegistroDeViajes.Server.DataSources.NorthwindData.Territories.lsml
+RegistroDeViajes.Server.My Project.DataSources.ApplicationData.lsml
+RegistroDeViajes.Server.My Project.DataSources.NorthwindData.lsml
+RegistroDeViajes.Server.My Project.Service.lsml
